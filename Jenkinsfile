@@ -2,10 +2,10 @@ pipeline {
     agent any
     environment {
         // Customize these variables based on your setup
-        TOMCAT_URL = "http://15.206.210.193:8080"
+        TOMCAT_URL = http://ec2-54-152-178-213.compute-1.amazonaws.com:8080/
         TOMCAT_USER = "admin"
         TOMCAT_PASSWORD = "admin"
-        REPO_URL = "https://github.com/bprasad701/App-Deploy.git"
+        REPO_URL = ""https://github.com/chennareddy5/App-Deploy.git
     }
 
     stages {
