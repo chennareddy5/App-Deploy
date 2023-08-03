@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+        maven 'maven'
+    }
     environment {
         // Customize these variables based on your setup
         TOMCAT_URL = "http://54.152.178.213:8080"
