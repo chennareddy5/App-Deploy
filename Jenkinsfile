@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         // Customize these variables based on your setup
-        TOMCAT_URL = "http://54.152.178.213:8080"
+        TOMCAT_URL = "http://54.91.249.156:8080"
         TOMCAT_USER = "admin"
         TOMCAT_PASSWORD = "admin"
         REPO_URL = "https://github.com/chennareddy5/App-Deploy.git"
