@@ -1,0 +1,19 @@
+name: Deploy to Tomcat
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: linux-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and deploy
+        run:  --file pom.xml
+          mvn clean package
+          cp target/*.war /opt/tomcat/webapps/
+          service tomcat restart
