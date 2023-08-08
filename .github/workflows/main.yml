@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '1.7'
+          distribution: 'adopt'
 
       - name: Build the web application
         run: |
