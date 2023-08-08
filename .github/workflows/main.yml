@@ -21,6 +21,7 @@ jobs:
 
       - name: Build the web application
         run: |
+          ls -la
           cd ./path/to/sample-web-app
           mvn clean package
 
