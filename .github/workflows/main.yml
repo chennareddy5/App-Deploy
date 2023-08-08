@@ -31,9 +31,10 @@ jobs:
           username: ${{ secrets.TOMCAT_SERVER_USERNAME }}  
           password: ${{ secrets.TOMCAT_SERVER_PASSWORD }} 
           script: |
-            cd sample-web-app/target
+            ls -la
+            cd target
             # Assuming your .war file is named "sample-web-app.war"
-            scp sample-web-app.war ${{ secrets.TOMCAT_SERVER_USERNAME }}@${{ secrets.TOMCAT_SERVER_HOST }}:/path/to/tomcat/webapps
+            scp sample-web-app.war ${{ secrets.TOMCAT_SERVER_USERNAME }}@${{ secrets.TOMCAT_SERVER_HOST }}:/opt/apache-tomcat-10.1.11/webapps
 
       - name: Restart Tomcat
         uses: appleboy/ssh-action@master
