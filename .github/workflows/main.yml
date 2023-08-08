@@ -26,9 +26,9 @@ jobs:
       - name: Deploy to Tomcat
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.TOMCAT_SERVER_HOST }}  # Add your Tomcat server IP/domain as a GitHub secret.
-          username: ${{ secrets.TOMCAT_SERVER_USERNAME }}  # Add your Tomcat server username as a GitHub secret.
-          password: ${{ secrets.TOMCAT_SERVER_PASSWORD }}  # Add your Tomcat server password as a GitHub secret.
+          host: ${{ secrets.TOMCAT_SERVER_HOST }}  
+          username: ${{ secrets.TOMCAT_SERVER_USERNAME }}  
+          password: ${{ secrets.TOMCAT_SERVER_PASSWORD }} 
           script: |
             cd sample-web-app/target
             # Assuming your .war file is named "sample-web-app.war"
