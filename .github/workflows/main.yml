@@ -24,18 +24,13 @@ jobs:
           ls -la
           mvn clean package
 
-      - name: Create private key
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > id_rsa.pem
-          chmod 600 id_rsa.pem
-
       - name: Deploy to Tomcat
         uses: appleboy/ssh-action@master
         with:
           host:  3.95.162.65  
           username: ${{ secrets.TOMCAT_SERVER_USERNAME }}  
           password: ${{ secrets.TOMCAT_SERVER_PASSWORD }} 
-          key: ./id_rsa.pem
+          key: ${{ secrets.SSH_PRIVATE_KEY_PATH }}
           script: |
             ls -la
             cd target
@@ -48,7 +43,7 @@ jobs:
           host: ${{ secrets.TOMCAT_SERVER_HOST }}
           username: ${{ secrets.TOMCAT_SERVER_USERNAME }}
           password: ${{ secrets.TOMCAT_SERVER_PASSWORD }}
-          key: ./id_rsa.pem
+          key: ${{ secrets.SSH_PRIVATE_KEY_PATH }}
           script: |
             # Replace "tomcat-service" with the actual name of the Tomcat service on your server.
             sudo systemctl restart tomcat-service
