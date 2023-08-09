@@ -30,7 +30,6 @@ jobs:
           host:  3.95.162.65  
           username: ${{ secrets.TOMCAT_SERVER_USERNAME }}  
           password: ${{ secrets.TOMCAT_SERVER_PASSWORD }} 
-          key: ${{ secrets.SSH_PRIVATE_KEY_PATH }}
           script: |
             ls -la
             cd target
@@ -43,7 +42,6 @@ jobs:
           host: ${{ secrets.TOMCAT_SERVER_HOST }}
           username: ${{ secrets.TOMCAT_SERVER_USERNAME }}
           password: ${{ secrets.TOMCAT_SERVER_PASSWORD }}
-          key: ${{ secrets.SSH_PRIVATE_KEY_PATH }}
           script: |
             # Replace "tomcat-service" with the actual name of the Tomcat service on your server.
             sudo systemctl restart tomcat-service
