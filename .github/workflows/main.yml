@@ -24,7 +24,7 @@ jobs:
           ls -la
           mvn clean package
 
-      - name: Copy private key
+      - name: Create private key
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > id_rsa.pem
           chmod 600 id_rsa.pem
